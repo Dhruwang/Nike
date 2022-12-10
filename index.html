@@ -1,74 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+  <script src="bower_components/aos/dist/aos.js"></script> 
+  <title>Document</title>
 </head>
+
 <body>
-    <div class="wrapper">
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-          </div>
+  <div class="wrapper">
+    <nav class="navbar px-4 py-4 navbar-expand-lg " id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="./NikeLogo.png"></img></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">Disabled</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-      <div class="logo" id="logo">
-        <img src="./NikeLogo.png">
       </div>
-      <div class="imageDiv" id="backimg">
-      </div>
+    </nav>
+    <div class="logo" id="logo">
+      <img src="./NikeLogo.png">
     </div>
-    <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script>
+    <div class="imageDiv" id="backimg">
+    </div>
+    <div class="content">
+      Hello Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed minima inventore nemo blanditiis, sapiente quidem doloribus. Facere delectus ratione dolorem impedit vel provident soluta repudiandae quo molestias eos ipsam eveniet, dicta iusto dolorum autem perspiciatis beatae architecto. Accusamus est numquam, impedit nobis voluptates, nisi debitis ab eveniet porro corrupti ea vel vitae rem velit maxime consequatur? Quis eum doloremque omnis dolor, quibusdam nostrum dicta quos harum officia ab ullam est delectus numquam temporibus dolorum odio rem facilis ut fugit quidem architecto! Nam delectus consequuntur voluptates repellendus cum quibusdam nihil laborum inventore sapiente ut, quos similique ducimus suscipit cupiditate sed ipsam.
+    </div>
+  </div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script>
 
     let background = document.getElementById('backimg')
     let logo = document.getElementById('logo')
-    let zoom =1;
+    let navbar = document.getElementById('navbar')
+    let zoom = 1;
     document.addEventListener('scroll', function (e) {
       let value = window.scrollY;
       console.log(value)
-      if(value<300){
-        background.style.transform = `scale(${1-0.002*value})`
+      if (value < 300) {
+        background.style.transform = `scale(${1 - 0.002 * value})`
         background.style.transition = "all 0s ease-in-out"
-        background.style.opacity = `${1-0.001*value}`
+        // background.style.opacity = `${1 - 0.001 * value}`
+        background.style.filter = `brightness(${100-0.2*value}%)`
+        navbar.style.zIndex = "-2"
         background.style.zIndex = "-1"
         logo.style.zIndex = "0"
         logo.style.filter = "invert(1)";
-        }
-        if(value>300){
-          logo.style.filter = "invert(0)";
-          background.style.transition = "all 1s ease-in-out"
-          background.style.transform = "translateY(-1000px)"
-        }
-        if(value>450){
-          logo.style.transform = "translateY(-1000px)"
-        }
       }
-)
-</script>
+      if (value > 300) {
+        logo.style.filter = "invert(0)";
+        navbar.style.zIndex = "-2"
+        background.style.transition = "all 1s ease-in-out"
+        background.style.transform = "translateY(-1000px)"
+      }
+      if (value > 450) {
+        logo.style.zIndex = "-1"
+        navbar.style.zIndex = "100"
+      }
+    }
+    )
+  </script>
 </body>
+
 </html>
