@@ -1,20 +1,42 @@
-html{
+html {
     scroll-behavior: smooth;
+    text-align: center;
 }
-body{
+
+body {
     height: 300vh;
     overflow-x: hidden;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     z-index: -1;
 }
-.imageDiv{
+
+.imageDiv {
     background-image: url(./cover.jpg);
-    background-size:cover ;
+    background-size: cover;
     height: 100vh;
-    width: 100vw;position: fixed;
+    width: 100vw;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 0;
+    border-radius: 1rem;
+    border: 2px solid red;
+}
+
+.logo {
+    position: fixed;
+    top: 40%;
+    left: 37%;
+    /* transform: translate(-50%, -50%); */
+    transition: all 1s ease-in-out;
+}
+
+.logo img {
+    width: 400px;
+    height: 150px;
+    border: 2px solid red;
+
 }

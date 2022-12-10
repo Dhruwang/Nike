@@ -35,8 +35,10 @@
           </div>
         </div>
       </nav>
+      <div class="logo" id="logo">
+        <img src="./NikeLogo.png">
+      </div>
       <div class="imageDiv" id="backimg">
-        HEllo
       </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
@@ -44,13 +46,28 @@
 <script>
 
     let background = document.getElementById('backimg')
+    let logo = document.getElementById('logo')
     let zoom =1;
     document.addEventListener('scroll', function (e) {
       let value = window.scrollY;
-      if(value<500)
+      console.log(value)
+      if(value<300){
         background.style.transform = `scale(${1-0.002*value})`
-
+        background.style.transition = "all 0s ease-in-out"
+        background.style.opacity = `${1-0.001*value}`
+        background.style.zIndex = "-1"
+        logo.style.zIndex = "0"
+        logo.style.filter = "invert(1)";
         }
+        if(value>300){
+          logo.style.filter = "invert(0)";
+          background.style.transition = "all 1s ease-in-out"
+          background.style.transform = "translateY(-1000px)"
+        }
+        if(value>450){
+          logo.style.transform = "translateY(-1000px)"
+        }
+      }
 )
 </script>
 </body>
