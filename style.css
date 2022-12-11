@@ -33,7 +33,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    border-radius: 2rem;
+    
 }
 .logo {
     position: fixed;
@@ -49,7 +49,30 @@ body {
 
 }
 .content{
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
     margin-top: 150vh;
     z-index: 2;
+}
+.reveal{
+    transform: translateY(-100px);
+}
+.shoeMain{
+}
+.shoeCard{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 27rem;
+    margin-top: 2rem;
+}
+.shoeCard span{
+    color: maroon;
+    font-size: 1rem;
+}
+.shoeCard p{
+    color: grey;
+    margin-bottom: 0px;
+}
+.price{
+    color: black;
 }
