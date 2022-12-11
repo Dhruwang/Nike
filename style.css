@@ -63,7 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: start;
-    width: 27rem;
+    width: 21rem;
     margin-top: 2rem;
 }
 .shoeCard span{
@@ -89,12 +89,12 @@ body {
         
     }
     .shoeCard{
-        width: 20rem;
+        width: 35vh;
         
     }
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 770px) {
     .logo img {
         width: 180px;
         height: 70px;
@@ -102,7 +102,7 @@ body {
     }
     
     .shoeCard{
-        width: 15rem;
+        width: 12rem
         
     }
   }

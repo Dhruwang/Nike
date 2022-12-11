@@ -118,10 +118,8 @@
     let background = document.getElementById('backimg')
     let logo = document.getElementById('logo')
     let navbar = document.getElementById('navbar')
-    let shoeCard = document.querySelectorAll(".shoeCard")
     document.addEventListener('scroll', function (e) {
       let value = window.scrollY;
-      console.log(value)
       if(value<1){
         background.style.borderRadius = "0rem"
         background.style.transform = `scale(1)`
@@ -146,7 +144,6 @@
       if (value > 450) {
         logo.style.zIndex = "-1"
         navbar.style.zIndex = "100"
-        shoeCard.classList.add("reveal")
 
       }
     }
