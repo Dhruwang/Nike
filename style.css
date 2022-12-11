@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    height: 300vh;
+    height: 150vh;
     overflow-x: hidden;
 }
 
@@ -39,6 +39,7 @@ body {
     position: fixed;
     top: 40%;
     left: 37%;
+    text-align: center;
     /* transform: translate(-50%, -50%); */
     transition: all 1s ease-in-out;
 }
@@ -76,3 +77,44 @@ body {
 .price{
     color: black;
 }
+@media screen and (max-width: 1000px) {
+    .logo img {
+        width: 270px;
+        height: 100px;
+    
+    }
+    .logo {
+        top: 40%;
+        left: 32%;
+        
+    }
+    .shoeCard{
+        width: 20rem;
+        
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .logo img {
+        width: 180px;
+        height: 70px;
+    
+    }
+    
+    .shoeCard{
+        width: 15rem;
+        
+    }
+  }
+  @media screen and (max-width: 510px) {
+    
+    .shoeCard{
+        width: 95vw
+        
+    }
+    .logo {
+        top: 40%;
+        left: 30%;
+        
+    }
+  }

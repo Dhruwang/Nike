@@ -29,13 +29,13 @@
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Sale</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">Gift</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link ">Disabled</a>
+              <a class="nav-link ">New & Featured</a>
             </li>
           </ul>
         </div>
@@ -122,10 +122,11 @@
     document.addEventListener('scroll', function (e) {
       let value = window.scrollY;
       console.log(value)
-      if(value===0){
-        background.style.borderRadius = null
+      if(value<1){
+        background.style.borderRadius = "0rem"
+        background.style.transform = `scale(1)`
       }
-      if (value < 300) {
+      if (value < 300 && value>1) {
         background.style.transform = `scale(${1 - 0.002 * value})`
         background.style.transition = "all 0s ease-in-out"
         // background.style.opacity = `${1 - 0.001 * value}`
